@@ -1,98 +1,248 @@
+# EasySearch Monolith
+
+<p align="center">
+  A comprehensive service-based platform for house rentals, hostel rentals, marketplace, and other service-related solutions.
+</p>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 📋 Description
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+**EasySearch** is a modern, scalable service-based platform built with NestJS that provides a unified solution for multiple service domains:
 
-## Description
+- 🏠 **House Rental Services** - Find and list residential properties
+- 🏨 **Hostel Rental Services** - Manage and discover hostel accommodations
+- 🛒 **Marketplace** - Buy and sell products and services
+- 🔧 **Other Services** - Extensible platform for additional service categories
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This monolithic application is designed with a modular architecture, making it easy to scale and maintain while providing a robust foundation for service-oriented features.
 
-## Project setup
+## 🚀 Features
 
+- **Modular Architecture** - Clean separation of concerns with NestJS modules
+- **TypeScript** - Type-safe development experience
+- **RESTful API** - Well-structured API endpoints
+- **Dependency Injection** - Built-in DI container for better code organization
+- **Testing Support** - Comprehensive unit and e2e testing setup
+- **Hot Reload** - Fast development with watch mode
+- **Code Quality** - ESLint and Prettier configured for consistent code style
+
+## 🛠️ Technology Stack
+
+- **Framework:** NestJS 11.x
+- **Runtime:** Node.js
+- **Language:** TypeScript 5.x
+- **Package Manager:** pnpm
+- **Testing:** Jest
+- **Code Quality:** ESLint, Prettier
+
+## 💻 Prerequisites
+
+Before running this project, ensure you have the following installed:
+
+- **Node.js** (v18 or higher recommended)
+- **pnpm** (v8 or higher)
+
+Install pnpm globally if you haven't:
 ```bash
-$ pnpm install
+npm install -g pnpm
 ```
 
-## Compile and run the project
+## 🚀 Getting Started
+
+### 1. Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+# Install dependencies
+pnpm install
 ```
 
-## Run tests
+### 2. Running the Application
 
 ```bash
-# unit tests
-$ pnpm run test
+# Development mode
+pnpm run start
 
-# e2e tests
-$ pnpm run test:e2e
+# Watch mode (recommended for development)
+pnpm run start:dev
 
-# test coverage
-$ pnpm run test:cov
+# Debug mode
+pnpm run start:debug
+
+# Production mode
+pnpm run start:prod
 ```
 
-## Deployment
+The application will start on `http://localhost:3000` by default.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### 3. Building the Project
 
 ```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
+# Build for production
+pnpm run build
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## 🧪 Testing
 
-## Resources
+```bash
+# Run unit tests
+pnpm run test
 
-Check out a few resources that may come in handy when working with NestJS:
+# Run tests in watch mode
+pnpm run test:watch
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+# Run e2e tests
+pnpm run test:e2e
 
-## Support
+# Generate test coverage report
+pnpm run test:cov
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# Debug tests
+pnpm run test:debug
+```
 
-## Stay in touch
+## 📝 Code Quality
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+# Format code with Prettier
+pnpm run format
 
-## License
+# Lint and fix code
+pnpm run lint
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+## 📁 Project Structure
+
+```
+easysearch-monolith/
+├── src/
+│   ├── apps/              # Domain modules
+│   │   ├── domain.module.ts
+│   │   └── index.ts
+│   ├── app.controller.ts  # Main application controller
+│   ├── app.service.ts     # Main application service
+│   ├── app.module.ts      # Root module
+│   └── main.ts            # Application entry point
+├── test/               # E2E tests
+├── .prettierrc         # Prettier configuration
+├── eslint.config.mjs   # ESLint configuration
+├── nest-cli.json       # Nest CLI configuration
+├── package.json        # Project dependencies
+├── tsconfig.json       # TypeScript configuration
+└── README.md           # This file
+```
+
+## 🚀 API Endpoints
+
+The platform provides RESTful API endpoints for various services:
+
+### Base URL
+```
+http://localhost:3000
+```
+
+### Health Check
+- `GET /` - Returns "Hello World!" to verify the application is running
+
+*More endpoints will be available as service modules are developed.*
+
+## 🏛️ Architecture
+
+EasySearch follows a modular monolithic architecture:
+
+- **AppModule**: Root module that orchestrates the entire application
+- **DomainModule**: Contains domain-specific business logic and services
+- **Controllers**: Handle HTTP requests and responses
+- **Services**: Implement business logic and data operations
+- **Dependency Injection**: Promotes loose coupling and testability
+
+## 🛡️ Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+PORT=3000
+# Add other environment variables as needed
+```
+
+## 📚 Development Guidelines
+
+### Code Style
+- Follow TypeScript best practices
+- Use ESLint and Prettier for code formatting
+- Write meaningful commit messages
+- Add unit tests for new features
+
+### Module Creation
+```bash
+# Generate a new module
+nest g module <module-name>
+
+# Generate a new controller
+nest g controller <controller-name>
+
+# Generate a new service
+nest g service <service-name>
+```
+
+## 🔐 Security
+
+- Input validation for all API endpoints
+- Environment-based configuration
+- Security headers implementation (to be added)
+- Rate limiting (to be added)
+
+## 🛣️ Roadmap
+
+- [ ] House Rental Module
+  - [ ] Property listing CRUD operations
+  - [ ] Search and filter functionality
+  - [ ] Image upload support
+- [ ] Hostel Rental Module
+  - [ ] Hostel management
+  - [ ] Booking system
+  - [ ] Availability calendar
+- [ ] Marketplace Module
+  - [ ] Product listings
+  - [ ] Category management
+  - [ ] Search functionality
+- [ ] User Management
+  - [ ] Authentication & Authorization
+  - [ ] User profiles
+  - [ ] Role-based access control
+- [ ] Payment Integration
+- [ ] Notification System
+- [ ] Admin Dashboard
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is [UNLICENSED](LICENSE).
+
+## 📞 Support & Contact
+
+For support or questions, please:
+- Open an issue in the repository
+- Contact the development team
+
+## 🙏 Acknowledgments
+
+- Built with [NestJS](https://nestjs.com/) - A progressive Node.js framework
+- Powered by [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+<p align="center">Made with ❤️ for the EasySearch Platform</p>
