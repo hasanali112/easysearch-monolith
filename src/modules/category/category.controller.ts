@@ -52,29 +52,64 @@ export class CategoryController {
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(UserRole.ADMIN, UserRole.SUPER_ADMIN)
   @ApiBearerAuth('JWT-auth')
-  @ApiOperation({ summary: 'Create category', description: 'Create a new category (Admin only)' })
+  @UseInterceptors(FileInterceptor('image'))
+  @ApiOperation({ summary: 'Create category', description: 'Create a new category with optional image (Admin only)' })
   @ApiResponse({ status: 201, description: 'Category created successfully' })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 403, description: 'Forbidden - Admin access required' })
   @ApiResponse({ status: 409, description: 'Category with this name already exists' })
-  @ApiBody({ type: CreateCategoryDto })
-  async createCategory(@Body() createData: CreateCategoryDto) {
-    return this.categoryService.createCategory(createData);
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        categoryName: { type: 'string', example: 'Electronics' },
+        description: { type: 'string', example: 'Electronic items' },
+        image: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
+  async createCategory(
+    @Body() createData: CreateCategoryDto,
+    @UploadedFile() imageFile?: Express.Multer.File,
+  ) {
+    return this.categoryService.createCategory(createData, imageFile);
   }
 
   @Patch(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(UserRole.ADMIN, UserRole.SUPER_ADMIN)
   @ApiBearerAuth('JWT-auth')
-  @ApiOperation({ summary: 'Update category', description: 'Update an existing category (Admin only)' })
+  @UseInterceptors(FileInterceptor('image'))
+  @ApiOperation({ summary: 'Update category', description: 'Update an existing category with optional image (Admin only)' })
   @ApiResponse({ status: 200, description: 'Category updated successfully' })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
   @ApiResponse({ status: 403, description: 'Forbidden - Admin access required' })
   @ApiResponse({ status: 404, description: 'Category not found' })
   @ApiParam({ name: 'id', description: 'Category ID' })
-  @ApiBody({ type: UpdateCategoryDto })
-  async updateCategory(@Param('id') id: string, @Body() updateData: UpdateCategoryDto) {
-    return this.categoryService.updateCategory(id, updateData);
+  @ApiConsumes('multipart/form-data')
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        categoryName: { type: 'string', example: 'Electronics' },
+        description: { type: 'string', example: 'Electronic items' },
+        image: {
+          type: 'string',
+          format: 'binary',
+        },
+      },
+    },
+  })
+  async updateCategory(
+    @Param('id') id: string,
+    @Body() updateData: UpdateCategoryDto,
+    @UploadedFile() imageFile?: Express.Multer.File,
+  ) {
+    return this.categoryService.updateCategory(id, updateData, imageFile);
   }
 
   @Delete(':id')
